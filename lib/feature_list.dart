@@ -6,15 +6,14 @@ class FeatureList extends StatelessWidget {
     required this.data,
   }) : super(key: key);
 
-  final Map<String, Object> data;
+  final Map<String, dynamic> data;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: (data["features"] as List<Map<String, Object>>).length,
+        itemCount: (data["features"] as List<dynamic>).length,
         itemBuilder: (context, index) {
-          final features =
-              (data["features"] as List<Map<String, Object>>)[index];
+          final features = (data["features"] as List<dynamic>)[index];
 
           final coords = (features["geometry"]
               as Map<String, dynamic>)["coordinates"] as List;
@@ -36,7 +35,7 @@ class FeatureList extends StatelessWidget {
                       width: 20,
                     ),
                     Text(
-                        "name: ${(features["properties"] as Map<String, String>)["name"]}"),
+                        "name: ${(features["properties"] as Map<String, dynamic>)["name"]}"),
                   ],
                 ),
                 Row(
@@ -45,7 +44,7 @@ class FeatureList extends StatelessWidget {
                       width: 20,
                     ),
                     Text(
-                        "type: ${(features["properties"] as Map<String, String>)["type"]}"),
+                        "type: ${(features["properties"] as Map<String, dynamic>)["type"]}"),
                   ],
                 ),
                 const Text("geomatry:"),

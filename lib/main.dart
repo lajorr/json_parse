@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:json_data/home_screen.dart';
 
-void main() {
+Future main()async{
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
