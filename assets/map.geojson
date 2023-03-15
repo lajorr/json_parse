@@ -202,7 +202,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name`": "Irish Pub",
+        "name": "Irish Pub",
         "type": "bar"
       },
       "geometry": {

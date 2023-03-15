@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:json_data/home_screen.dart';
+import 'package:json_data/screens/home_screen.dart';
 
-Future main()async{
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
@@ -9,14 +9,17 @@ Future main()async{
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Json Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: const Color.fromRGBO(99, 157, 134, 1),
+          primary: const Color.fromRGBO(21, 70, 76, 1),
+        ),
       ),
+      debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
     );
   }
